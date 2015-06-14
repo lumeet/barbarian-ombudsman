@@ -1,0 +1,42 @@
+{
+  "name": "barbarian-ombudsman",
+  "version": "0.1.0",
+  "description": "Find missing translations",
+  "directories": {
+    "test": "test"
+  },
+  "bin": {
+    "barbarian-ombudsman": "./bin/barbarian-ombudsman"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lumeet/barbarian-ombudsman.git"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "localization",
+    "locale",
+    "language",
+    "test"
+  ],
+  "author": "Teemu Louhekari",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "gulp-jscs": "^1.6.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-mocha": "^2.1.1",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "colors": "^1.1.0",
+    "commander": "^2.8.1",
+    "glob": "^5.0.10",
+    "lodash": "^3.9.3"
+  }
+}

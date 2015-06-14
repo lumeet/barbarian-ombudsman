@@ -1,0 +1,10 @@
+{
+  "ns": {
+    "avain": "arvo",
+    "key": "valu",
+    "something": {
+       "more": "jep",
+       "even": "else"
+    }
+  }
+}
