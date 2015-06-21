@@ -3,12 +3,32 @@ require('./test_helper');
 Resolve = require('../lib/source_resolve');
 
 describe('SourceResolve', function() {
+  describe('constructor', function() {
+    beforeEach(function() {
+      this.resolve = new Resolve({});
+    });
+
+    it('sets a default value for the `prefix` option', function() {
+      expect(this.resolve.options.prefix).to.eq(false);
+    });
+
+    it('sets a default value for the `locales` option', function() {
+      expect(this.resolve.options.locales).to.deep.equal([]);
+    });
+
+    it('sets a default value for the `respath` option', function() {
+      expect(this.resolve.options.respath)
+        .to.eq('./locales/__LOCALE__/**/*.json');
+    });
+  });
+
   describe('#locales', function() {
     context('when it looks good', function() {
       beforeEach(function() {
         this.resolve = new Resolve({
           respath: './test/resources/namespaced/__LOCALE__/*.json',
-          locales: ['fi', 'en']
+          locales: ['fi', 'en'],
+          prefix: true
         });
       });
 

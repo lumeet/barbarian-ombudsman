@@ -18,6 +18,7 @@ describe('CLI', function() {
       var cmd = [
         './bin/barbarian-ombudsman',
         '--locales en,fi',
+        '--prefix true',
         '--respath ./test/resources/namespaced/__LOCALE__/*.json'
       ];
       exec(cmd.join(' '), function(_error, stdout, stderr) {
