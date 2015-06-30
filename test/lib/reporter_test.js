@@ -20,8 +20,8 @@ describe('Reporter', function() {
     });
 
     afterEach(function() {
-      if (console.error.restore) console.error.restore();
-      if (console.log.restore) console.log.restore();
+      if (console.error.restore) { console.error.restore(); }
+      if (console.log.restore) { console.log.restore(); }
     });
 
     it('displays the summary', function() {
@@ -33,11 +33,11 @@ describe('Reporter', function() {
 
     it('displays the details', function() {
       this.reporter.print(this.keyDiff);
-      var msg = "The following translations seem to be missing from '".white +
-        'en'.red + "':".white;
+      var msg = 'The following translations seem to be missing from \''.white +
+        'en'.red + '\':'.white;
       expect(this.error).to.have.been.calledWith(msg);
-      msg = "The following translations seem to be missing from '".white +
-        'fi'.red + "':".white;
+      msg = 'The following translations seem to be missing from \''.white +
+        'fi'.red + '\':'.white;
       expect(this.error).to.have.been.calledWith(msg);
       expect(this.error).to.have.been.calledWith('  \u2717 key'.red.bold).twice;
       console.log.restore();
