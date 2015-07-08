@@ -1,6 +1,6 @@
 require('../test_helper');
 
-Locale = require('../../lib/locale');
+var Locale = require('../../lib/locale');
 
 describe('Locale', function() {
   describe('new', function() {
