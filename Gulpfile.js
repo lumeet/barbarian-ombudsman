@@ -28,6 +28,7 @@ gulp.task('mocha', function(callback) {
     .on('finish', function() {
       return gulp.src('./test/**/*_test.js', { read: false })
         .pipe(mocha())
+        .on('error', handleError)
         .pipe(istanbul.writeReports({
           reporters: ['lcovonly', 'text', 'text-summary']
         }))
