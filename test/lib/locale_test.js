@@ -1,19 +1,19 @@
 require('../test_helper');
 
-var Locale = require('../../lib/locale');
+var locale = require('../../lib/locale');
 
-describe('Locale', function() {
-  describe('new', function() {
+describe('locale', function() {
+  describe('factory', function() {
     context('when a non-hash is given', function() {
       it('throws an error', function() {
-        expect(function() { new Locale('string'); }).to
+        expect(function() { locale('string'); }).to
           .throw('The source is not an object.');
       });
     });
 
     context('when a second argument is given', function() {
       it('stores it as the name', function() {
-        expect((new Locale({}, 'English')).name).to.eq('English');
+        expect((locale({}, 'English')).name).to.eq('English');
       });
     });
   });
@@ -29,7 +29,7 @@ describe('Locale', function() {
           message: 'Beware!'
         }
       };
-      expect((new Locale(hash)).keys()).to.deep.equal([
+      expect((locale(hash)).keys()).to.deep.equal([
         'ns.person.firstName',
         'ns.person.lastName',
         'ns.message'

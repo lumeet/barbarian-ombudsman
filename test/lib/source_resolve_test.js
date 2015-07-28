@@ -1,11 +1,11 @@
-require('./test_helper');
+require('../test_helper');
 
-Resolve = require('../lib/source_resolve');
+resolve = require('../../lib/source_resolve');
 
-describe('SourceResolve', function() {
-  describe('constructor', function() {
+describe('sourceResolve', function() {
+  describe('factory', function() {
     beforeEach(function() {
-      this.resolve = new Resolve({});
+      this.resolve = resolve({});
     });
 
     it('sets a default value for the `prefix` option', function() {
@@ -25,7 +25,7 @@ describe('SourceResolve', function() {
   describe('#locales', function() {
     context('when it looks good', function() {
       beforeEach(function() {
-        this.resolve = new Resolve({
+        this.resolve = resolve({
           respath: './test/resources/namespaced/__LOCALE__/*.json',
           locales: ['fi', 'en'],
           prefix: true
@@ -52,7 +52,7 @@ describe('SourceResolve', function() {
 
     context('when a prefix is set as false', function() {
       beforeEach(function() {
-        this.resolve = new Resolve({
+        this.resolve = resolve({
           respath: './test/resources/namespaced/__LOCALE__/*.json',
           prefix: false,
           locales: ['en']
@@ -69,7 +69,7 @@ describe('SourceResolve', function() {
 
     context('when a locale is not found', function() {
       beforeEach(function() {
-        this.resolve = new Resolve({
+        this.resolve = resolve({
           respath: './test/resources/namespaced/__LOCALE__/*.json',
           locales: ['de']
         });
@@ -86,7 +86,7 @@ describe('SourceResolve', function() {
 
     context('when respath is not given', function() {
       beforeEach(function() {
-        this.resolve = new Resolve({
+        this.resolve = resolve({
           locales: ['fi']
         });
       });

@@ -1,13 +1,13 @@
 /* jshint expr: true */
 require('../test_helper');
 
-var Reporter = require('../../lib/reporter');
+var reporter = require('../../lib/reporter');
 var colors   = require('colors');
 
 describe('Reporter', function() {
   describe('#print', function() {
     beforeEach(function() {
-      this.reporter = new Reporter();
+      this.reporter = reporter();
       this.keyDiff = {
         locales: [{ name: 'en' }, { name: 'fi' }],
         keys: function() { return [1, 2]; },
