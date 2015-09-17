@@ -5,6 +5,7 @@
   "directories": {
     "test": "test"
   },
+  "main": "./lib/runner.js",
   "bin": {
     "barbarian-ombudsman": "./bin/barbarian-ombudsman"
   },

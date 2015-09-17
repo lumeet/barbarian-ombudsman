@@ -3,10 +3,8 @@
 (function() {
   "use strict";
 
-  var program  = require('commander'),
-      source   = require('../lib/source_resolve'),
-      keyDiff  = require('../lib/key_diff'),
-      reporter = require('../lib/reporter');
+  var program = require('commander');
+  var runner  = require('../lib/runner');
 
   var list = function(val) {
     return val.split(',');
@@ -19,7 +17,5 @@
     .option('-p, --prefix', 'File basename as key prefix')
     .parse(process.argv);
 
-  var locales = source(program).locales();
-  var diff = keyDiff(locales);
-  diff.report(reporter());
+  runner(program).invoke()
 })();
