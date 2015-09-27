@@ -21,8 +21,21 @@ describe('runner', function() {
     });
 
     it('runs and reports', function() {
-      this.runner.invoke();
+      var ret = this.runner.invoke();
       expect(this.log).to.have.been.calledWith('Found 5 keys in total.\n');
+      expect(ret).to.eq(false);
+    });
+
+    context('when there are no errors', function() {
+      it('returns true', function() {
+        var ret = runner({
+          respath: './test/resources/namespaced/__LOCALE__/*.json',
+          locales: ['fi'],
+          prefix: true
+        }).invoke();
+
+        expect(ret).to.eq(true);
+      });
     });
   });
 });

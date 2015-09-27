@@ -17,5 +17,5 @@
     .option('-p, --prefix', 'File basename as key prefix')
     .parse(process.argv);
 
-  runner(program).invoke()
+  process.exit(runner(program).invoke() ? 0 : 1);
 })();
