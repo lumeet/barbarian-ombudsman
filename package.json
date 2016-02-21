@@ -1,6 +1,6 @@
 {
   "name": "barbarian-ombudsman",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Find missing translations",
   "directories": {
     "test": "test"
@@ -27,21 +27,24 @@
   "author": "Teemu Louhekari",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^3.0.0",
-    "codeclimate-test-reporter": "0.0.4",
-    "gulp": "^3.9.0",
-    "gulp-istanbul": "^0.10.0",
-    "gulp-jscs": "^1.6.0",
-    "gulp-jshint": "^1.11.0",
-    "gulp-mocha": "^2.1.1",
-    "istanbul": "^0.3.15",
-    "sinon": "^1.14.1",
+    "chai": "^3.5.0",
+    "codeclimate-test-reporter": "^0.3.1",
+    "gulp": "^3.9.1",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "istanbul": "^0.4.2",
+    "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
-    "colors": "^1.1.0",
-    "commander": "^2.8.1",
-    "glob": "^5.0.10",
-    "lodash": "^3.9.3"
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "glob": "^7.0.0",
+    "lodash": "^4.5.0"
+  },
+  "peerDependencies": {
+    "jshint": "^2.9.1"
   }
 }
