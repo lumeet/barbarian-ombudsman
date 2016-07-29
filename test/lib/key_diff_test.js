@@ -1,9 +1,9 @@
 /* jshint expr: true */
 require('../test_helper');
 
-var keyDiff  = require('../../lib/key_diff');
-var locale   = require('../../lib/locale');
-var reporter = require('../../lib/reporter');
+var keyDiff = require('../../lib/key_diff');
+var locale = require('../../lib/locale');
+var reporter = require('../../lib/report');
 
 describe('keyDiff', function() {
   before(function() {
@@ -58,16 +58,6 @@ describe('keyDiff', function() {
         var locales = [this.locales[0], this.locales[0]];
         expect((keyDiff(locales)).isDirty()).to.be.false;
       });
-    });
-  });
-
-  describe('#report', function() {
-    it('tries to print the report', function() {
-      reporter = reporter();
-      var print = sinon.stub(reporter, 'print');
-
-      (keyDiff(this.locales)).report(reporter);
-      expect(print).to.have.been.called.once;
     });
   });
 });
